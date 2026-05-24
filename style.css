@@ -191,6 +191,7 @@ footer span {
   color: #6b6560;
 }
 
+
 @media (max-width: 680px) {
   body { padding: 32px 20px; }
   .body { grid-template-columns: 1fr; }
