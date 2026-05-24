@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memorandum — Board Succession</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* page-specific overrides */
+
+      .candidate {
+        border-top: 1px solid #2a2a2a;
+        padding: 28px 0;
+      }
+
+      .candidate:last-child {
+        border-bottom: 1px solid #2a2a2a;
+      }
+
+      .candidate-name {
+        font-family: "Playfair Display", serif;
+        font-size: 22px;
+        font-weight: 400;
+        margin-bottom: 4px;
+      }
+
+      .candidate-title {
+        font-size: 11px;
+        font-weight: 300;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #6b6560;
+        margin-bottom: 16px;
+      }
+
+      .candidate-meta {
+        display: flex;
+        gap: 32px;
+        margin-bottom: 14px;
+      }
+
+      .candidate-meta span {
+        font-size: 11px;
+        font-weight: 300;
+        color: #6b6560;
+        letter-spacing: 0.08em;
+      }
+
+      .candidate-meta span strong {
+        display: block;
+        font-size: 13px;
+        font-weight: 400;
+        color: #e8e4dc;
+        letter-spacing: 0;
+        margin-bottom: 2px;
+      }
+
+      .verdict {
+        display: inline-block;
+        font-size: 9px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 3px 10px;
+        margin-top: 12px;
+      }
+
+      .verdict.recommended {
+        border: 1px solid #e8e4dc;
+        color: #e8e4dc;
+      }
+
+      .verdict.reserve {
+        border: 1px solid #2a2a2a;
+        color: #6b6560;
+      }
+
+      .timeline {
+        margin-top: 4px;
+      }
+
+      .timeline-row {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 0 24px;
+        padding: 12px 0;
+        border-bottom: 1px solid #1c1c1c;
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+      .timeline-row:last-child {
+        border-bottom: none;
+      }
+
+      .timeline-date {
+        color: #6b6560;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        padding-top: 2px;
+      }
+
+      .outgoing {
+        font-family: "Playfair Display", serif;
+        font-size: 19px;
+        font-style: italic;
+        opacity: 0.6;
+        margin-bottom: 16px;
+        line-height: 1.4;
+      }
+
+      .back-link {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #6b6560;
+        text-decoration: none;
+        margin-bottom: 40px;
+        border-bottom: 1px solid #2a2a2a;
+        padding-bottom: 2px;
+      }
+
+      .back-link:hover {
+        color: #e8e4dc;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span>Veltmann &amp; Partner Advisors</span>
+      <div class="header-right">
+        <span>Restricted Memorandum</span>
+        <div class="badge">Confidential</div>
+      </div>
+    </header>
+
+    <a class="back-link" href="index.html">← All Memoranda</a>
+
+    <div class="title-block">
+      <h1>
+        Succession of the Supervisory Board Chair at Hartmann &amp; Bleich AG
+      </h1>
+      <p class="subtitle">
+        Prepared for the Nomination Committee &mdash; Not for Distribution
+      </p>
+    </div>
+
+    <div class="body">
+      <aside>
+        <div class="meta">
+          <div class="meta-label">Date</div>
+          <div class="meta-value"><strong>02 April 2025</strong></div>
+        </div>
+        <div class="meta">
+          <div class="meta-label">Client</div>
+          <div class="meta-value">
+            <strong>Hartmann &amp; Bleich AG</strong>
+            Munich
+          </div>
+        </div>
+        <div class="meta">
+          <div class="meta-label">Prepared by</div>
+          <div class="meta-value">
+            <strong>Dr. K. Veltmann</strong>
+            Senior Advisory Partner
+          </div>
+        </div>
+        <div class="meta">
+          <div class="meta-label">Reference</div>
+          <div class="meta-value">VP-2025-0388</div>
+        </div>
+        <div class="meta">
+          <div class="meta-label">Classification</div>
+          <div class="meta-value">Committee-Restricted</div>
+        </div>
+        <div class="meta">
+          <div class="meta-label">Pages</div>
+          <div class="meta-value">1 of 1 (Summary)</div>
+        </div>
+      </aside>
+
+      <main>
+        <div class="section">
+          <div class="section-title">[ Background ]</div>
+          <p class="outgoing">
+            "I have served this board for eleven years. The organisation now
+            requires a chair whose horizon extends beyond my own."<br />— Prof.
+            Werner Kastner, letter of resignation, 14 February 2025
+          </p>
+          <p>
+            Prof. Werner Kastner notified the Nomination Committee of his
+            intention to step down as Chair of the Supervisory Board effective
+            30 June 2025, citing age and a desire to allow a planned transition
+            rather than an abrupt one. His tenure has been defined by the firm's
+            successful dual listing in 2019 and its navigation of the 2022
+            supply chain restructuring.
+          </p>
+          <p>
+            The committee has requested that Veltmann &amp; Partner advise on
+            the suitability of three identified candidates and make a clear
+            recommendation prior to the May shareholder assembly, at which a
+            formal appointment must be ratified.
+          </p>
+        </div>
+
+        <div class="section">
+          <div class="section-title">[ Candidate Assessment ]</div>
+
+          <div class="candidate">
+            <div class="candidate-name">Dr. Ingrid Falkenberg</div>
+            <div class="candidate-title">
+              Former CFO, Rhenania Industriewerke GmbH
+            </div>
+            <div class="candidate-meta">
+              <span><strong>Age</strong>57</span>
+              <span><strong>Board experience</strong>14 years</span>
+              <span><strong>Independence</strong>Confirmed</span>
+            </div>
+            <p>
+              Dr. Falkenberg brings the deepest financial governance experience
+              of the three candidates, having chaired audit committees at two
+              DAX-adjacent firms. Her approach to board leadership is consensual
+              without being indecisive — a distinction the committee should
+              weigh carefully given the structural decisions anticipated over
+              the next term.
+            </p>
+            <p>
+              Her sole limitation is a relative unfamiliarity with the firm's
+              primary export markets. This is addressable through committee
+              composition and does not constitute a material disqualifier.
+            </p>
+            <div class="verdict recommended">[ Recommended ]</div>
+          </div>
+
+          <div class="candidate">
+            <div class="candidate-name">Mr. Tobias Wengler</div>
+            <div class="candidate-title">
+              Managing Partner, Wengler Capital Advisors
+            </div>
+            <div class="candidate-meta">
+              <span><strong>Age</strong>61</span>
+              <span><strong>Board experience</strong>9 years</span>
+              <span><strong>Independence</strong>Conditional</span>
+            </div>
+            <p>
+              Mr. Wengler presents a credible profile but carries a conditional
+              independence designation due to his firm's prior advisory
+              relationship with Hartmann &amp; Bleich AG between 2018 and 2021.
+              While this relationship has concluded, its recency falls within
+              the standard look-back period applied by institutional
+              shareholders.
+            </p>
+            <p>
+              His candidacy would likely draw scrutiny at the shareholder
+              assembly and risks undermining the committee's broader governance
+              narrative at a sensitive moment in the firm's public profile.
+            </p>
+            <div class="verdict reserve">[ Reserve ]</div>
+          </div>
+
+          <div class="candidate">
+            <div class="candidate-name">Ms. Claudia Reimer-Brandt</div>
+            <div class="candidate-title">
+              Independent Non-Executive Director
+            </div>
+            <div class="candidate-meta">
+              <span><strong>Age</strong>53</span>
+              <span><strong>Board experience</strong>6 years</span>
+              <span><strong>Independence</strong>Confirmed</span>
+            </div>
+            <p>
+              Ms. Reimer-Brandt is the strongest candidate on the dimension of
+              strategic transformation, having guided two mid-cap firms through
+              significant operational restructuring. However, her supervisory
+              board experience, while growing, does not yet match the depth
+              required for a chair role at a firm of this complexity and public
+              profile.
+            </p>
+            <p>
+              The committee may wish to retain her as a board member with a view
+              to chair candidacy in a subsequent term.
+            </p>
+            <div class="verdict reserve">[ Reserve ]</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">[ Transition Timeline ]</div>
+          <div class="timeline">
+            <div class="timeline-row">
+              <span class="timeline-date">14 Feb 2025</span>
+              <span
+                >Prof. Kastner submits formal letter of resignation to the
+                Nomination Committee.</span
+              >
+            </div>
+            <div class="timeline-row">
+              <span class="timeline-date">02 Apr 2025</span>
+              <span
+                >Veltmann &amp; Partner delivers candidate assessment
+                memorandum.</span
+              >
+            </div>
+            <div class="timeline-row">
+              <span class="timeline-date">28 Apr 2025</span>
+              <span
+                >Nomination Committee meets to ratify preferred candidate and
+                brief legal counsel.</span
+              >
+            </div>
+            <div class="timeline-row">
+              <span class="timeline-date">15 May 2025</span>
+              <span
+                >Annual shareholder assembly — formal appointment put to
+                vote.</span
+              >
+            </div>
+            <div class="timeline-row">
+              <span class="timeline-date">30 Jun 2025</span>
+              <span
+                >Prof. Kastner's tenure concludes. Incoming chair assumes full
+                responsibility.</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">[ Recommendation ]</div>
+          <p>
+            The Advisory Committee recommends the appointment of
+            <strong>Dr. Ingrid Falkenberg</strong> as incoming Chair of the
+            Supervisory Board, effective 1 July 2025, subject to ratification at
+            the May shareholder assembly.
+          </p>
+          <p>
+            Her governance record, independence status, and temperament
+            represent the most defensible appointment available to the
+            committee. The firm is entering a period that will require steady,
+            credible oversight rather than transformational leadership — Dr.
+            Falkenberg is suited precisely to this moment.
+          </p>
+          <p>
+            It is further recommended that Ms. Reimer-Brandt be formally invited
+            to join the board as a non-executive member, establishing continuity
+            of institutional knowledge for a future succession cycle.
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <span
+        >Veltmann &amp; Partner Advisors &mdash; Frankfurt &mdash; 2025</span
+      >
+      <span>VP-2025-0388 &mdash; Committee-Restricted</span>
+    </footer>
+  </body>
+</html>
