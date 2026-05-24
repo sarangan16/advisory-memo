@@ -40,8 +40,15 @@ header span {
   color: #6b6560;
 }
 
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
 .title-block {
-  margin-top: 52px;
+  margin-top: 28px;
   margin-bottom: 52px;
 }
 
@@ -94,7 +101,6 @@ aside .meta-value strong {
 
 .badge {
   display: inline-block;
-  margin-top: 28px;
   border: 1px solid #2a2a2a;
   color: #6b6560;
   font-size: 9px;
