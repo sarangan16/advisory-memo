@@ -52,26 +52,40 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--rule);
-  padding: 16px 20px;
+  padding: 12px 20px;
   margin: 0 -20px 40px;
-  gap: 12px;
+  gap: 8px;
   transition: background .25s, border-color .25s;
+  min-width: 0;
 }
 
-header span {
+header > span:first-child {
   font-size: 10px;
   font-weight: 300;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--muted);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .header-right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   flex-shrink: 0;
+}
+
+.header-right > span {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
 }
 
 .badge {
@@ -99,6 +113,17 @@ header span {
 
 .theme-toggle:hover {
   color: var(--text);
+}
+
+/* hide "Restricted Memorandum" text on small screens, keep badge + toggle */
+@media (max-width: 480px) {
+  header > span:first-child {
+    display: none;
+  }
+
+  .header-right > span {
+    display: none;
+  }
 }
 
 /* title */
@@ -132,7 +157,7 @@ h1 {
 aside {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px 32px;
+  gap: 20px 24px;
 }
 
 aside .meta-label {
@@ -260,6 +285,7 @@ ul li .num {
   justify-content: space-between;
   align-items: flex-end;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 .next-memo a:hover h2 {
