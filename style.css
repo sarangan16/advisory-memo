@@ -1,38 +1,31 @@
-/* ─── Reset ─────────────────────────────────────────────────── */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* ─── Tokens ─────────────────────────────────────────────────── */
 :root {
   --bg: #0f0f0f;
-  --surface: #0f0f0f;
   --text: #e8e4dc;
   --muted: #6b6560;
   --dim: #9a948c;
   --rule: #2a2a2a;
-  --rule-soft: #1c1c1c;
-  --text-para: rgba(232, 228, 220, .85);
+  --faint: #1c1c1c;
+  --para: rgba(232,228,220,.85);
   --toggle-bg: #1e1e1e;
 }
 
 [data-theme="light"] {
   --bg: #f5f3ef;
-  --surface: #f5f3ef;
   --text: #1a1816;
   --muted: #7a7470;
   --dim: #5a5450;
   --rule: #d8d4cc;
-  --rule-soft: #e4e0d8;
-  --text-para: rgba(26, 24, 22, .82);
+  --faint: #e4e0d8;
+  --para: rgba(26,24,22,.82);
   --toggle-bg: #e4e0d8;
 }
 
-/* ─── Base ───────────────────────────────────────────────────── */
 html {
   background: var(--bg);
   color: var(--text);
@@ -48,11 +41,12 @@ body {
   padding: 0 20px 60px;
 }
 
-/* ─── Header ─────────────────────────────────────────────────── */
+/* header */
+
 header {
   position: sticky;
   top: 0;
-  background: var(--surface);
+  background: var(--bg);
   z-index: 10;
   display: flex;
   justify-content: space-between;
@@ -81,7 +75,6 @@ header span {
 }
 
 .badge {
-  display: inline-block;
   border: 1px solid var(--rule);
   color: var(--muted);
   font-size: 9px;
@@ -89,10 +82,8 @@ header span {
   text-transform: uppercase;
   padding: 3px 8px;
   white-space: nowrap;
-  transition: border-color .25s, color .25s;
 }
 
-/* ─── Theme toggle ───────────────────────────────────────────── */
 .theme-toggle {
   background: var(--toggle-bg);
   border: 1px solid var(--rule);
@@ -110,7 +101,8 @@ header span {
   color: var(--text);
 }
 
-/* ─── Title block ────────────────────────────────────────────── */
+/* title */
+
 .title-block {
   margin-bottom: 40px;
 }
@@ -121,7 +113,6 @@ h1 {
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 10px;
-  color: var(--text);
 }
 
 .subtitle {
@@ -130,14 +121,14 @@ h1 {
   color: var(--muted);
 }
 
-/* ─── Body grid ──────────────────────────────────────────────── */
+/* layout */
+
 .body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px 0;
 }
 
-/* ─── Aside ──────────────────────────────────────────────────── */
 aside {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -158,7 +149,6 @@ aside .meta-value {
   font-weight: 300;
   color: var(--dim);
   line-height: 1.6;
-  transition: color .25s;
 }
 
 aside .meta-value strong {
@@ -167,7 +157,8 @@ aside .meta-value strong {
   color: var(--text);
 }
 
-/* ─── Sections ───────────────────────────────────────────────── */
+/* sections */
+
 .section {
   margin-bottom: 40px;
 }
@@ -185,14 +176,13 @@ aside .meta-value strong {
   border-bottom: 1px solid var(--rule);
   padding-bottom: 10px;
   margin-bottom: 18px;
-  transition: border-color .25s;
 }
 
 p {
   font-size: 14px;
   font-weight: 300;
   line-height: 1.85;
-  color: var(--text-para);
+  color: var(--para);
   margin-bottom: 16px;
 }
 
@@ -207,12 +197,9 @@ blockquote {
   font-family: 'Playfair Display', serif;
   font-size: 16px;
   line-height: 1.6;
-  color: var(--text);
   opacity: 0.7;
-  transition: border-color .25s;
 }
 
-/* ─── List (recommendations) ─────────────────────────────────── */
 ul {
   list-style: none;
   margin-top: 4px;
@@ -225,11 +212,10 @@ ul li {
   font-size: 14px;
   font-weight: 300;
   line-height: 1.8;
-  color: var(--text-para);
+  color: var(--para);
   padding-bottom: 14px;
   margin-bottom: 14px;
-  border-bottom: 1px solid var(--rule-soft);
-  transition: border-color .25s;
+  border-bottom: 1px solid var(--faint);
 }
 
 ul li:last-child {
@@ -242,11 +228,11 @@ ul li .num {
   padding-top: 5px;
 }
 
-/* ─── Back link ──────────────────────────────────────────────── */
+/* nav links */
+
 .back-link {
   display: inline-block;
   font-size: 10px;
-  font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--muted);
@@ -254,19 +240,17 @@ ul li .num {
   margin-bottom: 36px;
   border-bottom: 1px solid var(--rule);
   padding-bottom: 2px;
-  transition: color .2s, border-color .25s;
+  transition: color .2s;
 }
 
 .back-link:hover {
   color: var(--text);
 }
 
-/* ─── Next memo ──────────────────────────────────────────────── */
 .next-memo {
   margin-top: 52px;
   padding-top: 24px;
   border-top: 1px solid var(--rule);
-  transition: border-color .25s;
 }
 
 .next-memo a {
@@ -295,7 +279,6 @@ ul li .num {
   font-size: clamp(18px, 3vw, 22px);
   font-weight: 400;
   line-height: 1.3;
-  color: var(--text);
 }
 
 .next-memo .arrow {
@@ -304,7 +287,6 @@ ul li .num {
   flex-shrink: 0;
 }
 
-/* ─── Footer ─────────────────────────────────────────────────── */
 footer {
   margin-top: 60px;
   padding-top: 20px;
@@ -312,7 +294,6 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  transition: border-color .25s;
 }
 
 footer span {
@@ -323,11 +304,11 @@ footer span {
   color: var(--muted);
 }
 
-/* ─── Succession page specifics ──────────────────────────────── */
+/* succession page */
+
 .candidate {
   border-top: 1px solid var(--rule);
   padding: 24px 0;
-  transition: border-color .25s;
 }
 
 .candidate:last-child {
@@ -339,7 +320,6 @@ footer span {
   font-size: 20px;
   font-weight: 400;
   margin-bottom: 4px;
-  color: var(--text);
 }
 
 .candidate-title {
@@ -403,16 +383,13 @@ footer span {
   grid-template-columns: 110px 1fr;
   gap: 0 20px;
   padding: 11px 0;
-  border-bottom: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--faint);
   font-size: 13px;
   font-weight: 300;
-  color: var(--text-para);
-  transition: border-color .25s;
+  color: var(--para);
 }
 
-.timeline-row:last-child {
-  border-bottom: none;
-}
+.timeline-row:last-child { border-bottom: none; }
 
 .timeline-date {
   color: var(--muted);
@@ -426,17 +403,28 @@ footer span {
   font-family: "Playfair Display", serif;
   font-size: 18px;
   font-style: italic;
-  color: var(--text);
   opacity: 0.6;
   margin-bottom: 16px;
   line-height: 1.4;
 }
 
-/* ─── Tablet ─────────────────────────────────────────────────── */
-@media (min-width: 600px) {
-  body {
-    padding: 0 40px 72px;
+/* accessibility */
+
+:focus-visible {
+  outline: 1px solid var(--muted);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
   }
+}
+
+/* responsive */
+
+@media (min-width: 600px) {
+  body { padding: 0 40px 72px; }
 
   header {
     padding: 18px 40px;
@@ -453,11 +441,8 @@ footer span {
   }
 }
 
-/* ─── Desktop ────────────────────────────────────────────────── */
 @media (min-width: 900px) {
-  body {
-    padding: 0 48px 80px;
-  }
+  body { padding: 0 48px 80px; }
 
   header {
     padding: 20px 48px;
@@ -478,45 +463,24 @@ footer span {
   }
 }
 
-/* ─── Print ──────────────────────────────────────────────────── */
+/* print */
+
 @media print {
-  @page {
-    margin: 2cm 2.5cm;
-  }
+  @page { margin: 2cm 2.5cm; }
 
   :root {
     --bg: #fff;
-    --surface: #fff;
     --text: #000;
     --muted: #444;
     --dim: #333;
     --rule: #ccc;
-    --rule-soft: #eee;
-    --text-para: #000;
+    --faint: #eee;
+    --para: #000;
   }
 
-  header {
-    position: static;
-    padding: 0 0 16px;
-    margin: 0 0 32px;
-  }
-
-  body {
-    max-width: 100%;
-    padding: 0;
-  }
-
-  .next-memo,
-  .back-link,
-  .theme-toggle {
-    display: none;
-  }
-
-  footer {
-    margin-top: 40px;
-  }
-
-  blockquote {
-    break-inside: avoid;
-  }
+  header { position: static; padding: 0 0 16px; margin: 0 0 32px; }
+  body { max-width: 100%; padding: 0; }
+  .next-memo, .back-link, .theme-toggle { display: none; }
+  footer { margin-top: 40px; }
+  blockquote { break-inside: avoid; }
 }
