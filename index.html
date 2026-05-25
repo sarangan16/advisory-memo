@@ -15,6 +15,7 @@
   <body>
     <header>
       <span>Veltmann &amp; Partner Advisors</span>
+      <button class="theme-toggle" id="toggle" aria-label="Toggle theme">☀︎</button>
       <div class="header-right">
         <span>Restricted Memorandum</span>
         <div class="badge">Confidential</div>
@@ -183,5 +184,18 @@
       >
       <span>VP-2025-0441 &mdash; Board-Restricted</span>
     </footer>
-  </body>
+    <script>
+    const toggle = document.getElementById("toggle");
+    const root = document.documentElement;
+    const saved = localStorage.getItem("theme") || "dark";
+    root.dataset.theme = saved;
+    toggle.textContent = saved === "light" ? "☽" : "☀︎";
+    toggle.addEventListener("click", () => {
+      const next = root.dataset.theme === "light" ? "dark" : "light";
+      root.dataset.theme = next;
+      toggle.textContent = next === "light" ? "☽" : "☀︎";
+      localStorage.setItem("theme", next);
+    });
+  </script>
+</body>
 </html>

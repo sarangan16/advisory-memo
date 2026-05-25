@@ -11,131 +11,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <style>
-      /* page-specific overrides */
-
-      .candidate {
-        border-top: 1px solid #2a2a2a;
-        padding: 28px 0;
-      }
-
-      .candidate:last-child {
-        border-bottom: 1px solid #2a2a2a;
-      }
-
-      .candidate-name {
-        font-family: "Playfair Display", serif;
-        font-size: 22px;
-        font-weight: 400;
-        margin-bottom: 4px;
-      }
-
-      .candidate-title {
-        font-size: 11px;
-        font-weight: 300;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: #6b6560;
-        margin-bottom: 16px;
-      }
-
-      .candidate-meta {
-        display: flex;
-        gap: 32px;
-        margin-bottom: 14px;
-      }
-
-      .candidate-meta span {
-        font-size: 11px;
-        font-weight: 300;
-        color: #6b6560;
-        letter-spacing: 0.08em;
-      }
-
-      .candidate-meta span strong {
-        display: block;
-        font-size: 13px;
-        font-weight: 400;
-        color: #e8e4dc;
-        letter-spacing: 0;
-        margin-bottom: 2px;
-      }
-
-      .verdict {
-        display: inline-block;
-        font-size: 9px;
-        font-weight: 500;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        padding: 3px 10px;
-        margin-top: 12px;
-      }
-
-      .verdict.recommended {
-        border: 1px solid #e8e4dc;
-        color: #e8e4dc;
-      }
-
-      .verdict.reserve {
-        border: 1px solid #2a2a2a;
-        color: #6b6560;
-      }
-
-      .timeline {
-        margin-top: 4px;
-      }
-
-      .timeline-row {
-        display: grid;
-        grid-template-columns: 120px 1fr;
-        gap: 0 24px;
-        padding: 12px 0;
-        border-bottom: 1px solid #1c1c1c;
-        font-size: 13px;
-        font-weight: 300;
-      }
-
-      .timeline-row:last-child {
-        border-bottom: none;
-      }
-
-      .timeline-date {
-        color: #6b6560;
-        font-size: 11px;
-        letter-spacing: 0.06em;
-        padding-top: 2px;
-      }
-
-      .outgoing {
-        font-family: "Playfair Display", serif;
-        font-size: 19px;
-        font-style: italic;
-        opacity: 0.6;
-        margin-bottom: 16px;
-        line-height: 1.4;
-      }
-
-      .back-link {
-        display: inline-block;
-        font-size: 10px;
-        font-weight: 400;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: #6b6560;
-        text-decoration: none;
-        margin-bottom: 40px;
-        border-bottom: 1px solid #2a2a2a;
-        padding-bottom: 2px;
-      }
-
-      .back-link:hover {
-        color: #e8e4dc;
-      }
-    </style>
   </head>
   <body>
     <header>
       <span>Veltmann &amp; Partner Advisors</span>
+      <button class="theme-toggle" id="toggle" aria-label="Toggle theme">
+        ☀︎
+      </button>
       <div class="header-right">
         <span>Restricted Memorandum</span>
         <div class="badge">Confidential</div>
@@ -363,5 +245,18 @@
       >
       <span>VP-2025-0388 &mdash; Committee-Restricted</span>
     </footer>
+    <script>
+      const toggle = document.getElementById("toggle");
+      const root = document.documentElement;
+      const saved = localStorage.getItem("theme") || "dark";
+      root.dataset.theme = saved;
+      toggle.textContent = saved === "light" ? "☽" : "☀︎";
+      toggle.addEventListener("click", () => {
+        const next = root.dataset.theme === "light" ? "dark" : "light";
+        root.dataset.theme = next;
+        toggle.textContent = next === "light" ? "☽" : "☀︎";
+        localStorage.setItem("theme", next);
+      });
+    </script>
   </body>
 </html>
