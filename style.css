@@ -115,14 +115,32 @@ header > span:first-child {
   color: var(--text);
 }
 
-/* hide "Restricted Memorandum" text on small screens, keep badge + toggle */
-@media (max-width: 480px) {
-  header > span:first-child {
-    display: none;
+/* mobile: stack header into two rows */
+@media (max-width: 540px) {
+  header {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+    padding: 10px 20px;
   }
 
-  .header-right > span {
-    display: none;
+  header > span:first-child {
+    flex: 1 1 auto;
+    order: 1;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+
+  .theme-toggle {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .header-right {
+    flex: 0 0 100%;
+    order: 3;
+    justify-content: flex-start;
   }
 }
 
